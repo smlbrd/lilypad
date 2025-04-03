@@ -34,14 +34,18 @@ const CreditsCounter = () => {
         style={styles.incrementButton}
         underlayColor="rgba(255, 255, 255, 0.2)"
       >
-        <View style={styles.touchableArea} />
+        <View style={[styles.touchableArea, styles.plusIcon]}>
+          <Text style={styles.creditsText}>+</Text>
+        </View>
       </TouchableHighlight>
       <TouchableHighlight
         onPress={handleDecrementPress}
         style={styles.decrementButton}
         underlayColor="rgba(255, 255, 255, 0.2)"
       >
-        <View style={styles.touchableArea} />
+        <View style={[styles.touchableArea, styles.minusIcon]}>
+          <Text style={styles.creditsText}>-</Text>
+        </View>
       </TouchableHighlight>
     </View>
   );
@@ -56,7 +60,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   touchableArea: {
-    // touchableHighlight throws an error without a child to call their own
     flex: 1,
   },
   incrementButton: {
@@ -72,6 +75,19 @@ const styles = StyleSheet.create({
     top: 0,
     bottom: 0,
     width: '50%',
+  },
+  plusIcon: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: '80%',
+  },
+  minusIcon: {
+    position: 'relative',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: '80%',
   },
   creditsIcon: { position: 'absolute', width: 100, height: 100 },
   creditsText: {
