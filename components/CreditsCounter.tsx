@@ -1,6 +1,12 @@
 import * as Haptics from 'expo-haptics';
 import { useState } from 'react';
-import { View, TouchableHighlight, StyleSheet, Text } from 'react-native';
+import {
+  View,
+  TouchableHighlight,
+  StyleSheet,
+  Text,
+  Image,
+} from 'react-native';
 
 const CreditsCounter = () => {
   const [credits, setCredits] = useState(0);
@@ -18,6 +24,11 @@ const CreditsCounter = () => {
 
   return (
     <View style={styles.counterContainer}>
+      <Image
+        source={require('../assets/images/NSG_CREDIT_HALFTRANSPARENT.png')}
+        style={styles.creditsIcon}
+      />
+      <Text style={styles.creditsText}>{credits}</Text>
       <TouchableHighlight
         onPress={handleIncrementPress}
         style={styles.incrementButton}
@@ -32,7 +43,6 @@ const CreditsCounter = () => {
       >
         <View style={styles.touchableArea} />
       </TouchableHighlight>
-      <Text style={styles.creditsText}>{credits}</Text>
     </View>
   );
 };
@@ -63,10 +73,13 @@ const styles = StyleSheet.create({
     bottom: 0,
     width: '50%',
   },
+  creditsIcon: { position: 'absolute', width: 100, height: 100 },
   creditsText: {
     position: 'absolute',
     fontSize: 48,
     fontWeight: 'bold',
+    textShadowColor: '#000000',
+    textShadowRadius: 5,
     color: '#FFFFFF',
   },
 });
