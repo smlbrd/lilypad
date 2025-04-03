@@ -17,18 +17,17 @@ const CreditsCounter = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={styles.counterContainer}>
       <TouchableHighlight
-        onPress={handleDecrementPress}
-        style={styles.decrementButton}
+        onPress={handleIncrementPress}
+        style={styles.incrementButton}
         underlayColor="rgba(255, 255, 255, 0.2)"
       >
         <View style={styles.touchableArea} />
       </TouchableHighlight>
-      <Text>Hello</Text>
       <TouchableHighlight
-        onPress={handleIncrementPress}
-        style={styles.incrementButton}
+        onPress={handleDecrementPress}
+        style={styles.decrementButton}
         underlayColor="rgba(255, 255, 255, 0.2)"
       >
         <View style={styles.touchableArea} />
@@ -39,25 +38,25 @@ const CreditsCounter = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
+  counterContainer: {
+    position: 'relative',
+    width: '100%',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    margin: 5,
-    marginTop: 5,
   },
   touchableArea: {
     // touchableHighlight throws an error without a child to call their own
     flex: 1,
   },
-  decrementButton: {
+  incrementButton: {
     position: 'absolute',
     left: 0,
     top: 0,
     bottom: 0,
     width: '50%',
   },
-  incrementButton: {
+  decrementButton: {
     position: 'absolute',
     right: 0,
     top: 0,
@@ -65,10 +64,10 @@ const styles = StyleSheet.create({
     width: '50%',
   },
   creditsText: {
+    position: 'absolute',
     fontSize: 48,
     fontWeight: 'bold',
     color: '#FFFFFF',
-    position: 'absolute',
   },
 });
 
