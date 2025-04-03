@@ -83,7 +83,6 @@ const styles = StyleSheet.create({
     marginLeft: '80%',
   },
   minusIcon: {
-    position: 'relative',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
